@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>The Internet Explorer 8 Countdown</title>
+		
+		<link rel="stylesheet" media="all" href="css/custom.css"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<!--
+		<script type="text/javascript" src="js/grid.js"></script>
+		-->
+		
+	<script type="text/javascript" charset="utf-8">
+	
+		$(document).ready(function() {
+			window.onload = init; // need to wait for css and otf/ttf to be loaded
+			
+			$(window).resize(function() {
+			  init();
+			});
+			
+			$("#badge").hide();
+			$("#educate").hide();
+			
+			$("#badge_link").click(function(){
+				$("#badge").show();
+				$("#educate").hide();
+				$("#action").hide();
+			});
+
+			$("#educate_link").click(function(){
+				$("#educate").show();
+				$("#badge").hide();
+				$("#action").hide();
+			});
+			
+			$(".back_link").click(function(){
+				$("#educate").hide();
+				$("#badge").hide();
+				$("#action").show();
+			});
+			
+			
+			
+		});
+		
+	
+		function init() {
+      var canvas = document.getElementById("big_svg");
+      var ctx = canvas.getContext("2d");
+      
+			if (window.innerWidth < 480) {
+				
+				ctx.canvas.width  = 252;
+			  ctx.canvas.height = 980;
+			
+				if(window.devicePixelRatio == 2) { 
+						// iPhone4 retina display?
+						// explained here http://blog.iwalt.com/2010/08/generating-highresolution-graphics-with-html5s-canvas-element.html
+				    canvas.setAttribute('width', 252*2);
+				    canvas.setAttribute('height', 980*2);
+				    ctx.scale(2, 2);
+				}
+			
+				draw_small(ctx);
+/*
+			} else if (window.innerWidth < 991) {
+				ctx.canvas.width  = 460;
+			  ctx.canvas.height = 460/644*384;
+				ctx.scale(460/644,460/644);
+				console.log("medium");
+				draw_big(ctx);
+*/
+			} else {
+				ctx.canvas.width  = 644;
+			  ctx.canvas.height = 384;
+			
+				if(window.devicePixelRatio == 2) { 
+						// iPhone4 retina display?
+						// explained here http://blog.iwalt.com/2010/08/generating-highresolution-graphics-with-html5s-canvas-element.html
+				    canvas.setAttribute('width', 644*2);
+				    canvas.setAttribute('height', 384*2);
+				    ctx.scale(2, 2);
+				}
+			
+				draw_big(ctx);
+			}
+			
+			var canvas = document.getElementById("bg");
+      var ctx = canvas.getContext("2d");
+
+			ctx.canvas.width  = 189;
+		  ctx.canvas.height = 64;
+		
+			if(window.devicePixelRatio == 2) { 
+					// iPhone4 retina display?
+					// explained here http://blog.iwalt.com/2010/08/generating-highresolution-graphics-with-html5s-canvas-element.html
+			    canvas.setAttribute('width', 189*2);
+			    canvas.setAttribute('height', 64*2);
+			    ctx.scale(2, 2);
+			}
+
+ 			draw_arrow(ctx);
+
+    }
+
+    function draw_big(ctx) {
+
+      // layer1/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(0.0, 0.0);
+      ctx.lineTo(644.0, 0.0);
+      ctx.lineTo(644.0, 384.0);
+      ctx.lineTo(0.0, 384.0);
+      ctx.lineTo(0.0, 0.0);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(226, 226, 226)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(25.6, 112.7);
+      ctx.lineTo(104.6, 226.7);
+      ctx.lineTo(212.6, 77.7);
+      ctx.lineTo(25.6, 112.7);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(140, 190, 219)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(126.6, 225.7);
+      ctx.lineTo(184.6, 261.7);
+      ctx.lineTo(142.6, 341.7);
+      ctx.lineTo(127.6, 275.7);
+      ctx.lineTo(108.6, 251.7);
+      ctx.lineTo(126.6, 225.7);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(264.6, 323.6);
+      ctx.lineTo(313.6, 239.6);
+      ctx.lineTo(281.6, 215.6);
+      ctx.lineTo(226.6, 215.6);
+      ctx.lineTo(204.6, 243.6);
+      ctx.lineTo(217.6, 264.6);
+      ctx.lineTo(243.6, 264.6);
+      ctx.lineTo(264.6, 323.6);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(219.9, 190.0);
+      ctx.lineTo(219.2, 177.1);
+      ctx.lineTo(227.4, 177.4);
+      ctx.lineTo(226.2, 169.8);
+      ctx.lineTo(224.3, 149.3);
+      ctx.lineTo(233.8, 160.2);
+      ctx.lineTo(240.1, 157.4);
+      ctx.lineTo(236.8, 142.3);
+      ctx.lineTo(258.4, 116.6);
+      ctx.lineTo(280.8, 124.2);
+      ctx.lineTo(285.7, 176.6);
+      ctx.lineTo(270.7, 176.7);
+      ctx.lineTo(263.5, 185.2);
+      ctx.lineTo(248.8, 174.5);
+      ctx.lineTo(255.2, 191.0);
+      ctx.lineTo(246.0, 195.4);
+      ctx.lineTo(247.3, 190.2);
+      ctx.lineTo(243.1, 178.3);
+      ctx.lineTo(236.3, 182.0);
+      ctx.lineTo(234.9, 191.2);
+      ctx.lineTo(219.9, 190.0);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(283.3, 124.3);
+      ctx.lineTo(287.9, 176.5);
+      ctx.lineTo(385.5, 232.5);
+      ctx.lineTo(453.1, 83.8);
+      ctx.lineTo(333.0, 78.6);
+      ctx.lineTo(283.3, 124.3);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(393.6, 282.7);
+      ctx.lineTo(424.6, 260.7);
+      ctx.lineTo(459.6, 290.7);
+      ctx.lineTo(435.6, 317.7);
+      ctx.lineTo(419.6, 302.7);
+      ctx.lineTo(397.6, 304.7);
+      ctx.lineTo(393.6, 282.7);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Europe
+      ctx.font = "24.0px LeagueGothic";
+      ctx.fillStyle = "rgb(152, 152, 152)";
+      ctx.fillText("Europe", 195.2, 207.2);
+
+      // layer1/IE7 market share per region
+      ctx.fillText("IE8 market share per region", 25.6, 48.5);
+
+      // layer1/Africa
+      ctx.fillText("Africa", 242.4, 347.5);
+
+      // layer1/Australia
+      ctx.fillText("Australia", 409.6, 340.1);
+
+      // layer1/Asia
+      ctx.fillText("Asia", 409.6, 215.6);
+
+      // layer1/WORLDWIDE
+      ctx.font = "48.0px LeagueGothic";
+      ctx.fillStyle = "rgb(0, 0, 0)";
+      ctx.fillText("WORLDWIDE", 471.9, 182.0);
+
+      // layer1/North
+      ctx.font = "24.0px LeagueGothic";
+      ctx.fillStyle = "rgb(152, 152, 152)";
+      ctx.fillText("North", 21.7, 199.8);
+
+      // layer1/America
+      ctx.fillText("America", 21.7, 223.8);
+
+      // layer1/South
+      ctx.fillText("South", 80.6, 303.1);
+
+      // layer1/America
+      ctx.fillText("America", 80.6, 327.1);
+
+      // Asia
+      ctx.font = "72.0px LeagueGothic";
+      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.fillText("12%", 322.0, 170.2);
+
+      // Worldwide
+      ctx.font = "144.0px LeagueGothic";
+      ctx.fillStyle = "rgb(0, 0, 0)";
+      ctx.fillText("10%", 469.9, 137.5);
+
+      // Europe
+      ctx.font = "36.0px LeagueGothic";
+      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.fillText("8%", 247.3, 165.9);
+
+      // North America
+      ctx.font = "60.0px LeagueGothic";
+      ctx.fillText("11%", 71.1, 163.1);
+
+      // South America
+      ctx.font = "30.0px LeagueGothic";
+      ctx.fillText("10%", 132.0, 280.7);
+
+      // Africa
+      ctx.font = "48.0px LeagueGothic";
+      ctx.fillText("10%", 230.4, 261.0);
+
+      // Australia
+      ctx.font = "30.0px LeagueGothic";
+      ctx.fillText("9%", 407.5, 299.1);
+      ctx.restore();
+    }
+
+		function draw_small(ctx) {
+
+      // layer1/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(0.0, 0.0);
+      ctx.lineTo(252.0, 0.0);
+      ctx.lineTo(252.0, 980.0);
+      ctx.lineTo(0.0, 980.0);
+      ctx.lineTo(0.0, 0.0);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(226, 226, 226)";
+      ctx.fill();
+
+      // layer1/Group
+
+      // layer1/Group/WORLDWIDE
+      ctx.save();
+      ctx.font = "48.0px LeagueGothic";
+      ctx.fillStyle = "rgb(0, 0, 0)";
+      ctx.fillText("WORLDWIDE", 48.9, 215.0);
+
+      // Worldwide
+      ctx.font = "144.0px LeagueGothic";
+      ctx.fillText("10%", 46.9, 170.6);
+
+      // layer1/Group
+      ctx.restore();
+
+      // layer1/Group/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(39.7, 486.1);
+      ctx.lineTo(118.6, 599.9);
+      ctx.lineTo(226.4, 451.2);
+      ctx.lineTo(39.7, 486.1);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(140, 190, 219)";
+      ctx.fill();
+
+      // layer1/Group/Path
+      ctx.beginPath();
+      ctx.moveTo(140.5, 598.9);
+      ctx.lineTo(198.4, 634.8);
+      ctx.lineTo(156.5, 714.7);
+      ctx.lineTo(141.5, 648.8);
+      ctx.lineTo(122.5, 624.9);
+      ctx.lineTo(140.5, 598.9);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Group/North
+      ctx.font = "24.0px LeagueGothic";
+      ctx.fillStyle = "rgb(152, 152, 152)";
+      ctx.fillText("North", 35.7, 573.0);
+
+      // layer1/Group/America
+      ctx.fillText("America", 35.7, 597.0);
+
+      // layer1/Group/South
+      ctx.fillText("South", 94.6, 676.2);
+
+      // layer1/Group/America
+      ctx.fillText("America", 94.6, 700.2);
+
+      // North America
+      ctx.font = "60.0px LeagueGothic";
+      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.fillText("11%", 85.0, 536.4);
+
+      // South America
+      ctx.font = "30.0px LeagueGothic";
+      ctx.fillText("10%", 145.9, 653.8);
+
+      // layer1/Path
+      ctx.restore();
+      ctx.beginPath();
+      ctx.moveTo(130.3, 448.2);
+      ctx.lineTo(179.2, 364.3);
+      ctx.lineTo(147.2, 340.4);
+      ctx.lineTo(92.3, 340.4);
+      ctx.lineTo(70.4, 368.3);
+      ctx.lineTo(83.3, 389.3);
+      ctx.lineTo(109.3, 389.3);
+      ctx.lineTo(130.3, 448.2);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(140, 190, 219)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(85.6, 314.8);
+      ctx.lineTo(84.9, 302.0);
+      ctx.lineTo(93.1, 302.2);
+      ctx.lineTo(91.9, 294.7);
+      ctx.lineTo(90.0, 274.2);
+      ctx.lineTo(99.5, 285.0);
+      ctx.lineTo(105.8, 282.3);
+      ctx.lineTo(102.5, 267.2);
+      ctx.lineTo(124.1, 241.6);
+      ctx.lineTo(146.4, 249.1);
+      ctx.lineTo(151.3, 301.4);
+      ctx.lineTo(136.4, 301.6);
+      ctx.lineTo(129.1, 310.0);
+      ctx.lineTo(114.4, 299.3);
+      ctx.lineTo(120.9, 315.8);
+      ctx.lineTo(111.6, 320.2);
+      ctx.lineTo(113.0, 315.0);
+      ctx.lineTo(108.7, 303.1);
+      ctx.lineTo(102.0, 306.8);
+      ctx.lineTo(100.5, 316.0);
+      ctx.lineTo(85.6, 314.8);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Europe
+      ctx.font = "24.0px LeagueGothic";
+      ctx.fillStyle = "rgb(152, 152, 152)";
+      ctx.fillText("Europe", 61.0, 331.9);
+
+      // layer1/IE8 market share per region
+      ctx.fillText("IE8 market share per region", 36.0, 39.6);
+
+      // layer1/Africa
+      ctx.fillText("Africa", 65.6, 429.6);
+
+      // Europe
+      ctx.font = "36.0px LeagueGothic";
+      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.fillText("8%", 113.0, 290.8);
+
+      // Africa
+      ctx.font = "48.0px LeagueGothic";
+      ctx.fillText("10%", 96.1, 385.7);
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(25.0, 770.3);
+      ctx.lineTo(29.6, 822.4);
+      ctx.lineTo(127.0, 878.3);
+      ctx.lineTo(194.5, 729.8);
+      ctx.lineTo(74.6, 724.7);
+      ctx.lineTo(25.0, 770.3);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(140, 190, 219)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(135.1, 900.1);
+      ctx.lineTo(166.1, 878.1);
+      ctx.lineTo(201.0, 908.0);
+      ctx.lineTo(177.1, 935.0);
+      ctx.lineTo(161.1, 920.0);
+      ctx.lineTo(139.1, 922.0);
+      ctx.lineTo(135.1, 900.1);
+      ctx.closePath();
+      ctx.fill();
+
+      // layer1/Australia
+      ctx.font = "24.0px LeagueGothic";
+      ctx.fillStyle = "rgb(152, 152, 152)";
+      ctx.fillText("Australia", 151.0, 957.4);
+
+      // layer1/Asia
+      ctx.fillText("Asia", 151.0, 861.4);
+
+      // Asia
+      ctx.font = "72.0px LeagueGothic";
+      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.fillText("12%", 63.6, 816.1);
+
+      // Australia
+      ctx.font = "30.0px LeagueGothic";
+      ctx.fillText("9%", 149.0, 916.4);
+      ctx.restore();
+    }
+
+		function draw_arrow(ctx) {
+
+      // layer1/Compound Path
+      ctx.save();
+      ctx.beginPath();
+
+      // layer1/Compound Path/Path
+      ctx.moveTo(0.0, 0.0);
+      ctx.lineTo(179.0, 0.0);
+      ctx.lineTo(189.0, 32.0);
+      ctx.lineTo(179.0, 64.0);
+      ctx.lineTo(0.0, 64.0);
+      ctx.lineTo(0.0, 0.0);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(221, 16, 16)";
+      ctx.fill();
+      ctx.restore();
+    }
+
+
+	</script>
+		
+	</head>
+	
+	<body lang="en">
+		
+		<div id="grid">&nbsp;</div>
+		
+		<header>
+			<h1>The Internet Explorer&nbsp;8 Countdown</h1>
+			<p>Moving the world off Internet Explorer&nbsp;8</p>
+		</header>
+		
+		<aside>
+			<h2>3 years ago<br />another “browser” was born.</h2>
+			<p>Its name was Internet Explorer&nbsp;8. Now that we’re in 2011, in an era of modern web standards, it’s time to say goodbye.</p>
+			<p>This website is dedicated to watching Internet Explorer&nbsp;8 usage drop to less than 1% worldwide, so more websites can choose to drop support for Internet Explorer&nbsp;8, saving hours of work for web developers.</p>
+			
+			
+			<div id="arrow">
+				<h3>Here's what you can do</h3>
+
+				<!--<object id="bg" style="-webkit-mask-image:url(assets/arrow.svg);" data="assets/arrow.svg" type="image/svg+xml" width="189px" height="64px"></object>--><!-- masking the object with itself because of iPhone (some bug or what?) -->
+				<canvas id="bg"></canvas>
+				
+			</div><!-- #arrow -->
+			
+		</aside>
+		
+		<section id="map">                                                                                                         
+			
+			<div id="map_wrapper">
+				<canvas id="big_svg"></canvas>
+			</div>
+		
+		</section>
+		
+		<section id="action">
+			<article>
+				<h2>Join the cause</h2>
+				<p>Have a website? Encourage Internet Explorer&nbsp;8 users to upgrade by displaying the countdown banner to Internet Explorer users only.</p>
+				<a id="badge_link" href="#">Put the banner<br />on your site ></a>
+			</article>
+			
+			<article>
+				<h2>Educate others</h2>
+				<p>Friends don’t let friends use Internet Explorer&nbsp;8. And neither should acquaintances. Educate others about moving off of Internet Explorer&nbsp;8.</p>
+				<a id="educate_link" href="#">Why move off<br />Internet Explorer&nbsp;8 ></a>
+			</article>
+			
+			<article>
+				<h2>Tell your friends</h2>
+				<p>Let others know that you're doing your part to get Internet Explorer&nbsp;8 to&nbsp;1%.</p>
+				<a href="http://twitter.com/home?status=I'm+doing+my+part+to+get+IE+to+1%25+http%3A%2F%2Ftheie8countdown.com+%23ie_countdown">Tweet #ie_countdown ></a>
+			</article>
+
+		</section>
+		
+		<section id="details">
+			<article id="badge">
+				<h2>Join the cause</h2>
+				<p>We know that web developers are spending too much time supporting Internet Explorer&nbsp;8. We understand, and we’re here to help. Join us in moving Internet Explorer&nbsp;8 users to a modern browser. Follow these steps to help your site visitors (and you!) be free of Internet Explorer&nbsp;8:</p>
+				<p>1. Copy and paste this banner code into the body of your website:</p>
+				<p><code>&lt;!--[if IE]&gt;&lt;div style='clear: both; height: 112px; padding:0; position: relative;'&gt;&lt;a href="http://www.theie8countdown.com"&gt;&lt;img src="http://www.theie8countdown.com/assets/badge_iecountdown.png" border="0" height="112" width="348" alt="" /&gt;&lt;/a&gt;&lt;/div>&lt;![endif]--&gt;</code></p>
+				<p>2. Check that this banner shows up in Internet Explorer only on your site.</p>
+				<p><img src="assets/badge_iecountdown.png" /></p>
+				<a class="back_link" href="#">< back</a>
+			</article>
+			
+			<article id="educate">
+				<h2>Educate others</h2>
+				<p>It's very nice of Microsoft, that they launched <a href="http://theie6countdown.com">http://theie6countdown.com</a>. Unfortunately, they are several years late with it. Moreover, the texts on that website fit almost perfectly also for IE7, IE8 and even IE9. Therefore, I thought I would save them some work, and prepare the websites they've forgotten…</p>
+				<h2>Why move off Internet Explorer?</h2>
+				<p>Because Microsoft consistently fails to support in IE many features, that modern browsers do. These features allow developers make better and more powerful websites and web applications. If you look at sites like <a href="http://caniuse.com/">caniuse.com</a>, <a href="http://html5demos.com/">html5demos.com</a> or read <a href="http://people.mozilla.com/~prouget/ie9/">this article</a>, you'll see that Internet Explorer scores pretty badly. However, there are still plenty people, who use IE, thus hamper (unintentionally) the development of the web.</p>
+				<p>The usual argumentation why IE doesn't support many of the new featres is that they are not standardized yet. Hmm, why others have no problem with this? Anything that is implemented by all major browsers becomes de-facto standard, there's little reason to wait for some official approval and stamp. The web develops too fast to employ such an inefficient approach.</p>
+				<p>So if you know anyone, who uses Internet Explorer and does not have to, please explain them they are actually doing harm to themselves and to others and help them install a modern browser like <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.mozilla.com/">Firefox</a> or <a href="http://www.opera.com/browser/download/">Opera</a>.</p>
+				<a class="back_link" href="#">< back</a>
+			</article>
+			
+		</section>
+		
+		
+		<footer>
+			<p>Oh, ma! Who did this?? A guy, who wasted too much time hacking designs for IE, Josef Richter. See my website at <a href="http://www.josefrichter.com">josefrichter.com</a> and/or follow <a href="http://twitter.com/josefrichter">@josefrichter</a> on twitter if you like it! Thanks.</p>
+			<p>Set in <a href="http://www.theleagueofmoveabletype.com/fonts/7-league-gothic">League Gothic</a> by The League of Moveable Type and <a href="http://www.exljbris.com/callunasans.html">Calluna Sans</a> by Jos Buivenga. Also uses <a href="http://lessframework.com/">Less Framework 4</a> by Joni Korpi.</p>
+		</footer>
+		
+	</body>
+	
+</html>
