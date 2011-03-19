@@ -18,11 +18,9 @@
 		
 	<script type="text/javascript" charset="utf-8">
 	
-		console.log(History.emulated.pushState==true || History.emulated.hashChange==true);
 		if ((History.emulated.pushState==true || History.emulated.hashChange==true) && document.location.hash == "" && document.location.pathname != "/") {
 			//console.log(document.location.protocol+"//"+document.location.host+"/#"+document.location.pathname)
 			var newURL = document.location.protocol+"//"+document.location.host+"/#"+document.location.pathname;
-			console.log(newURL);
 			document.location = newURL; //redirect
 		}
 	
