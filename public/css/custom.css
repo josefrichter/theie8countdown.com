@@ -265,6 +265,10 @@ footer p {
 	margin:0;
 }
 
+#html5logo {
+	text-align:center;
+}
+
 #overlay h2 {
 	position:absolute;
 	top:24px;
