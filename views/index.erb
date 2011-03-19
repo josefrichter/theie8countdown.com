@@ -12,11 +12,19 @@
 		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
 		
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-		<!--
-		<script type="text/javascript" src="js/grid.js"></script>
-		-->
+		<script type="text/javascript" src="/js/history.adapter.jquery.js"></script>
+		<script type="text/javascript" src="/js/history.js"></script>
+		<script type="text/javascript" src="/js/history.html4.js"></script>
 		
 	<script type="text/javascript" charset="utf-8">
+	
+		console.log(History.emulated.pushState==true || History.emulated.hashChange==true);
+		if ((History.emulated.pushState==true || History.emulated.hashChange==true) && document.location.hash == "" && document.location.pathname != "/") {
+			//console.log(document.location.protocol+"//"+document.location.host+"/#"+document.location.pathname)
+			var newURL = document.location.protocol+"//"+document.location.host+"/#"+document.location.pathname;
+			console.log(newURL);
+			document.location = newURL; //redirect
+		}
 	
 		$(document).ready(function() {
 			window.onload = init; // need to wait for css and otf/ttf to be loaded
@@ -25,30 +33,46 @@
 			  init();
 			});
 			
-			$("#badge").hide();
-			$("#educate").hide();
-			
-			$("#badge_link").click(function(){
-				$("#badge").show();
-				$("#educate").hide();
-				$("#action").hide();
+			$("#badge_link").click(function(e){
+				e.preventDefault();
+				History.pushState('join-the-cause', null, 'join-the-cause');
 			});
 
-			$("#educate_link").click(function(){
+			$("#educate_link").click(function(e){
+				e.preventDefault();
+				History.pushState('educate-others', null, 'educate-others');
+			});
+			
+			$(".back_link").click(function(e){
+				e.preventDefault();
+				History.pushState(null , null, '/');
+			});
+			
+	    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+	        var hash = History.getStateHash(); // Note: We are using History.getState() instead of event.state
+	        //History.log(State.data, State.title, State.url);
+					menu_state(hash);
+	    });
+	
+			menu_state(History.getStateHash());
+	
+		});
+		
+		function menu_state(hash) {
+			if (hash=='/educate-others') {
 				$("#educate").show();
 				$("#badge").hide();
 				$("#action").hide();
-			});
-			
-			$(".back_link").click(function(){
+			} else if (hash == '/join-the-cause') {
+				$("#badge").show();
 				$("#educate").hide();
+				$("#action").hide();
+			} else {
 				$("#badge").hide();
+				$("#educate").hide();
 				$("#action").show();
-			});
-			
-			
-			
-		});
+			}
+		}
 		
 	
 		function init() {
@@ -493,8 +517,6 @@
 	</head>
 	
 	<body lang="en">
-		
-		<div id="grid">&nbsp;</div>
 		
 		<header>
 			<h1>The Internet Explorer&nbsp;8 Countdown</h1>
