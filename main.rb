@@ -1,6 +1,11 @@
 require 'rubygems'
 require 'sinatra'
 
+
+get '/ie-users-info' do
+  erb :ie_education_page
+end
+
 get '/' do
   erb :index
 end

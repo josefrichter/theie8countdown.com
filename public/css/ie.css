@@ -1,0 +1,54 @@
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+/* custom */
+
+body {
+	background:#f6f6f6;
+	color:#444;
+	font: normal 13px/18px 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+h2 {
+	font: normal 24px/36px Impact, Arial, sans-serif;
+	margin-bottom:1em;
+	color:#999;
+	letter-spacing:1px;
+}
+
+p {
+	margin-bottom:1em;
+}
+
+a {
+	color:#2c98d6;
+}
+
+b {
+	color:black;
+}
+
+#wrapper {
+	width:400px;
+	margin:40px auto;
+}
