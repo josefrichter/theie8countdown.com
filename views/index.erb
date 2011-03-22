@@ -10,12 +10,18 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
-		
+   
+    <!--[if IE]>
+      <script type="text/javascript">
+        document.location = "http://theie8countdown.com/ie-users-info" // redirect IE users
+      </script>
+    <![endif]-->
+
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/history.adapter.jquery.js"></script>
 		<script type="text/javascript" src="/js/history.js"></script>
 		<script type="text/javascript" src="/js/history.html4.js"></script>
-		
+   	
 	<script type="text/javascript" charset="utf-8">
 	
 		if ((History.emulated.pushState==true || History.emulated.hashChange==true) && document.location.hash == "" && document.location.pathname != "/") {
