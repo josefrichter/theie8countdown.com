@@ -13,7 +13,9 @@
    
     <!--[if IE]>
       <script type="text/javascript">
-        document.location = "http://theie8countdown.com/ie-users-info" // redirect IE users
+				if (document.location.hash != "#ie") {
+					document.location.pathname = "/ie-users-info" // redirect IE users unless #ie hash
+				}
       </script>
     <![endif]-->
 
@@ -284,7 +286,7 @@
       // Europe
       ctx.font = "36.0px LeagueGothic";
       ctx.fillStyle = "rgb(255, 255, 255)";
-      ctx.fillText("26%", 247.3, 165.9);
+      ctx.fillText("24%", 247.3, 165.9);
 
       // North America
       ctx.font = "60.0px LeagueGothic";
@@ -296,11 +298,11 @@
 
       // Africa
       ctx.font = "48.0px LeagueGothic";
-      ctx.fillText("25%", 230.4, 261.0);
+      ctx.fillText("24%", 230.4, 261.0);
 
       // Australia
       ctx.font = "30.0px LeagueGothic";
-      ctx.fillText("35%", 407.5, 299.1);
+      ctx.fillText("32%", 407.5, 299.1);
       ctx.restore();
     }
 
