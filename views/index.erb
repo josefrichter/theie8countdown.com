@@ -276,33 +276,33 @@
       // Asia
       ctx.font = "72.0px LeagueGothic";
       ctx.fillStyle = "rgb(255, 255, 255)";
-      ctx.fillText("29%", 322.0, 170.2);
+      ctx.fillText("<%= asia.to_s + '%' %>", 322.0, 170.2);
 
       // Worldwide
       ctx.font = "144.0px LeagueGothic";
       ctx.fillStyle = "rgb(0, 0, 0)";
-      ctx.fillText("30%", 469.9, 137.5);
+      ctx.fillText("<%= worldwide.to_s + '%' %>", 469.9, 137.5);
 
       // Europe
       ctx.font = "36.0px LeagueGothic";
       ctx.fillStyle = "rgb(255, 255, 255)";
-      ctx.fillText("24%", 247.3, 165.9);
+      ctx.fillText("<%= europe.to_s + '%' %>", 247.3, 165.9);
 
       // North America
       ctx.font = "60.0px LeagueGothic";
-      ctx.fillText("34%", 71.1, 163.1);
+      ctx.fillText("<%= northamerica.to_s + '%' %>", 71.1, 163.1);
 
       // South America
       ctx.font = "30.0px LeagueGothic";
-      ctx.fillText("34%", 132.0, 280.7);
+      ctx.fillText("<%= southamerica.to_s + '%' %>", 132.0, 280.7);
 
       // Africa
       ctx.font = "48.0px LeagueGothic";
-      ctx.fillText("24%", 230.4, 261.0);
+      ctx.fillText("<%= africa.to_s + '%' %>", 230.4, 261.0);
 
       // Australia
       ctx.font = "30.0px LeagueGothic";
-      ctx.fillText("32%", 407.5, 299.1);
+      ctx.fillText("<%= australia.to_s + '%' %>", 407.5, 299.1);
       ctx.restore();
     }
 
@@ -330,7 +330,7 @@
 
       // Worldwide
       ctx.font = "144.0px LeagueGothic";
-      ctx.fillText("30%", 46.9, 170.6);
+      ctx.fillText("10%", 46.9, 170.6);
 
       // layer1/Group
       ctx.restore();
@@ -374,11 +374,11 @@
       // North America
       ctx.font = "60.0px LeagueGothic";
       ctx.fillStyle = "rgb(255, 255, 255)";
-      ctx.fillText("34%", 85.0, 536.4);
+      ctx.fillText("<%= northamerica.to_s + '%' %>", 85.0, 536.4);
 
       // South America
       ctx.font = "30.0px LeagueGothic";
-      ctx.fillText("34%", 145.9, 653.8);
+      ctx.fillText("<%= southamerica.to_s + '%' %>", 145.9, 653.8);
 
       // layer1/Path
       ctx.restore();
@@ -426,7 +426,7 @@
       ctx.fillStyle = "rgb(152, 152, 152)";
       ctx.fillText("Europe", 61.0, 331.9);
 
-      // layer1/IE8 market share per region
+      // layer1/IE7 market share per region
       ctx.fillText("IE8 market share per region", 36.0, 39.6);
 
       // layer1/Africa
@@ -435,11 +435,11 @@
       // Europe
       ctx.font = "36.0px LeagueGothic";
       ctx.fillStyle = "rgb(255, 255, 255)";
-      ctx.fillText("26%", 113.0, 290.8);
+      ctx.fillText("<%= europe.to_s + '%' %>", 113.0, 290.8);
 
       // Africa
       ctx.font = "48.0px LeagueGothic";
-      ctx.fillText("25%", 96.1, 385.7);
+      ctx.fillText("<%= africa.to_s + '%' %>", 96.1, 385.7);
 
       // layer1/Path
       ctx.beginPath();
@@ -476,11 +476,11 @@
       // Asia
       ctx.font = "72.0px LeagueGothic";
       ctx.fillStyle = "rgb(255, 255, 255)";
-      ctx.fillText("29%", 63.6, 816.1);
+      ctx.fillText("<%= asia.to_s + '%' %>", 63.6, 816.1);
 
       // Australia
       ctx.font = "30.0px LeagueGothic";
-      ctx.fillText("35%", 149.0, 916.4);
+      ctx.fillText("<%= australia.to_s + '%' %>", 149.0, 916.4);
       ctx.restore();
     }
 
@@ -601,7 +601,7 @@
 		
 		
 		<footer>
-			<p>Oh, ma! Who did this?? A guy, who wasted too much time hacking designs for IE, Josef Richter. I am the designer of <a href="http://www.helvetibook.com">Helvetibook</a>, see also my <a href="http://dribbble.com/josefrichter">dribbbles</a> or follow <a href="http://twitter.com/josefrichter">@josefrichter</a> on twitter if you like it! Thanks.</p>
+			<p>Oh, ma! Who did this?? A guy, who wasted too much time hacking designs for IE, Josef Richter. I am a designer & front-end deveper, also running a small company <a href="http://www.feelapplications.com">FEEL Applications - custom mobile applications development</a>. See also my <a href="http://dribbble.com/josefrichter">dribbbles</a> or follow <a href="http://twitter.com/josefrichter">@josefrichter</a> on twitter if you like it! Thanks.</p>
 			<p>Set in <a href="http://www.theleagueofmoveabletype.com/fonts/7-league-gothic">League Gothic</a> by The League of Moveable Type and <a href="http://www.exljbris.com/callunasans.html">Calluna Sans</a> by Jos Buivenga. Also uses <a href="http://lessframework.com/">Less Framework 4</a> by Joni Korpi. This site is NOT optimized for IE, so that you can compare…</p>
 			
 			<div id="html5logo">
